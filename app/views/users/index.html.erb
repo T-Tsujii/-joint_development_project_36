@@ -1,1 +1,13 @@
-<h1>Hello!World!</h1>
+<h1>ユーザー 一覧</h1>
+
+<%= link_to "投稿画面へ", new_user_path %>
+<% @users.each do |user| %>
+  <p>
+    <%= user.name %>
+    <%= user.age %>
+    <%= link_to '詳細', users_path %>
+    <%= link_to '編集', users_path %>
+    <%= link_to '削除', users_path %>
+   
+  </p>
+<% end %>
