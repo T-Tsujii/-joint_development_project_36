@@ -11,6 +11,11 @@ class TasksController < ApplicationController
     Task.create(task_params)
   end
 
+  # 詳細を表示するメソッド
+  def show
+    @task = Task.find(params[:id])
+  end
+
   private
   def task_params
     params.require(:task).permit(:title, :text)
