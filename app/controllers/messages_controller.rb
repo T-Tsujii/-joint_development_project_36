@@ -19,6 +19,16 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
   end
 
+  # 編集機能
+  def edit
+    @message = Message.find(params[:id])
+  end
+
+  def update
+    message = Message.find(params[:id])
+    message.update(message_params)
+  end
+
   private
   # ストロングパラメータ
   def message_params
