@@ -14,6 +14,11 @@ class MessagesController < ApplicationController
     Message.create(message_params)
   end
 
+  # 詳細表示機能
+  def show
+    @message = Message.find(params[:id])
+  end
+
   private
   # ストロングパラメータ
   def message_params
