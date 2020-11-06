@@ -1,5 +1,10 @@
 class MessagesController < ApplicationController
 
+  # 一覧表示機能
+  def index
+    @messages = Message.all
+  end
+
   # 新規投稿機能
   def new
     @message = Message.new
