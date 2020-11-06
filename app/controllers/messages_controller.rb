@@ -29,6 +29,12 @@ class MessagesController < ApplicationController
     message.update(message_params)
   end
 
+  # 削除機能
+  def destroy
+    message = Message.find(params[:id])
+    message.destroy
+  end
+
   private
   # ストロングパラメータ
   def message_params
